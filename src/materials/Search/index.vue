@@ -376,6 +376,7 @@ export default defineComponent({
     onMounted(() => {
       showTabTips.value = props.element.showTabTips
       document.addEventListener('click', clickEngineWrapperOutside)
+			searchInput.value.focus();
     })
     onUnmounted(() => {
       document.removeEventListener('click', clickEngineWrapperOutside)
@@ -432,21 +433,22 @@ export default defineComponent({
 }
 .search-wrapper-box {
   width: 100%;
-  height: 2.4rem;
+  height: 3.2rem;
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   position: relative;
+	border-radius: 0;
   .search-main-box {
     width: 100%;
     height: 100%;
     background: v-bind(boxBackground);
-    border: 1px solid #c8c8cc;
+    // border: 1px solid #c8c8cc;
     display: flex;
     align-items: center;
   }
   .search-engine-box {
-    padding: 0 12px;
+    padding: 0 1rem;
     display: inline-flex;
-    border-right: 1px solid #c8c8cc;
+    // border-right: 1px solid #c8c8cc;
     cursor: pointer;
     justify-content: center;
     align-items: center;
@@ -469,7 +471,7 @@ export default defineComponent({
   .engine-selector {
     position: absolute;
     padding: 5px;
-    top: 3rem;
+    top: 3.3rem;
     left: 0;
     width: auto;
     display: flex;
@@ -538,8 +540,9 @@ export default defineComponent({
       outline: none;
       border: none;
       background: transparent;
-      padding: 0 20px 0 10px;
-      font-size: 1rem;
+			padding-right: 20px;
+      // padding: 0 20px 0 10px;
+      font-size: 1.2rem;
       font-weight: 500;
       color: #363640;
       vertical-align: middle;
@@ -612,7 +615,7 @@ export default defineComponent({
   }
   .link-search-wrapper {
     position: absolute;
-    top: calc(2.4rem + 5px);
+    top: calc(3.2rem + 5px);
     width: calc(100% - 90px);
     left: 50px;
     background: v-bind(boxBackground);
